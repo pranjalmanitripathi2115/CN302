@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="loginstyle.css">
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color:  rgb(226, 43, 226);
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <p>Not registered yet? <a href="new2.html" onclick="register()">Click here to register.</a></p>
+</div>
+
+<script src="scripts.js">
+    function validateForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+
+  if (username === "admin" && password === "password") {
+      alert("Login successful!");
+      return true;
+  } else {
+      alert("Invalid username or password!");
+      return false;
+  }
+}
+
+function register() {
+  var confirmed = confirm("Are you sure you want to go to the registration page?");
+  if (confirmed) {
+      window.location.href = "registration.html"; 
+  }
+}
+</script>
+</body>
+</html>

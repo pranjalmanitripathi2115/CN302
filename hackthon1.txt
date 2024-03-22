@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        button#already-registered {
+    background-color: rgb(206, 218, 32);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button#already-registered:hover {
+    background-color: rgb(47, 255, 220);
+}
+    </style>
+</head>
+<body>
+    <h1>Sign In</h1>
+    <form id="signin-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Sign In</button><br><br>
+        <button type="button" id="already-registered">Already Registered?</button>
+    </form>
+    <script src="scripts.js">
+        document.getElementById("signin-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Sign in logic would go here.");
+});
+
+document.getElementById("already-registered").addEventListener("click", function() {
+    var response = confirm("Are you already registered?");
+    if (response == true) {
+        alert("Redirecting to login page...");
+    } else {
+        alert("Continue registration process.");
+    }
+});
+    </script>
+</body>
+</html>
